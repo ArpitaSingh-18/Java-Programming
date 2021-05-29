@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class Boolean_matrix {
+
+	public static void main(String[] args) {
+		Scanner sr=new Scanner(System.in);
+		
+		int p,q,i,j,count=0,max=0,temp=0;
+		System.out.println("Enter the no. of row and column-");
+		p=sr.nextInt();
+		q=sr.nextInt();
+		int [][]arr=new int[p][q];
+		
+		System.out.println("\nEnter the elements of matrix \n");
+		for(i=0;i<arr.length;i++)
+		{
+			for(j=0;j<arr[i].length;j++)
+			{ arr[i][j]=sr.nextInt();}
+		}
+		
+		for(i=0;i<arr.length;i++)
+		{
+			for(j=0;j<arr[i].length;j++)
+			{
+				if(arr[i][j]==1)
+					count++;
+			}
+			if(max<count)
+			{
+				temp=i;
+				max=count;
+			}
+			count=0;
+		}
+		System.out.println("The no of 1s is maximum in row :"+temp);
+		
+
+	}
+
+}
